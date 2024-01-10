@@ -10,5 +10,15 @@
     <h2>{{some_list.2}}</h2>
     <h2>{{some_dict.inside_key}}</h2>
     <h2>{#This is a comment.#} </h2>
+
+    <ul>
+        {% for item in some_list %}
+                <li> {{item}} </li>
+        {% endfor %}
+
+        {% for k, v in some_dict.items %}
+            <li> {{k}} </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
