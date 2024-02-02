@@ -1,24 +1,46 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <!-- <meta charset="UTF-8" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    
     <h1>VARIABLE.HTML</h1>
-    <h2>Her firstname is {{first_name | lower | capfirst }} and lastname is {{last_name | lower |capfirst}} </h2>
+    <h1></h1>    
+    
+    <h2>
+      Her firstname is {{first_name | lower | capfirst }} and lastname is {{last_name | lower |capfirst}}
+    </h2>
     <h2>{{some_list.2}}</h2>
     <h2>{{some_dict.inside_key}}</h2>
-    <h2>{#This is a comment.#} </h2>
+    <h2>{#This is a comment.#}</h2> 
 
     <ul>
-        {% for item in some_list %}
-                <li> {{item}} </li>
-        {% endfor %}
-
-        {% for k, v in some_dict.items %}
-            <li> {{k}} </li>
-        {% endfor %}
+      {% for num in some_list %}
+        {% if num == 2 %}
+          <li> TWO</li>
+        {% else %}
+          <li>{{num}}</li>
+        {% endif %}
+      {% endfor %}
     </ul>
-</body>
+
+    {% if first_name == 'rosaLind' %}
+      {% if  user_logged_in %}
+          <h1>rosaLind LogIn</h1>
+      {% endif %}    
+    {% endif %}
+    
+
+      
+      {% comment %} {% if user_logged_in %}
+          <h1>LogIn</h1>
+      {% endfor %}  {% endcomment %}
+
+    
+
+  
+    
+  </body>
 </html>
